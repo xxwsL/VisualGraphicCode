@@ -10,7 +10,9 @@ public:
 	ImageOpBase(void) {};
 	virtual ~ImageOpBase(void) {};
 
-	virtual bool op(void *ustr_) const = 0;
+	virtual bool op(void) = 0;
+
+	virtual bool display() = 0;
 };
 
 #endif

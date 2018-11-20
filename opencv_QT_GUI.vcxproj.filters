@@ -55,9 +55,24 @@
     <ClCompile Include="dev\src\OpList_manege.cpp">
       <Filter>CPP</Filter>
     </ClCompile>
+    <ClCompile Include="dev\test\src\test_Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dev\src\button.cpp">
+      <Filter>CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="dev\src\list_graph.cpp">
+      <Filter>CPP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="mainwindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="dev\inc\button.hpp">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="dev\inc\list_graph.hpp">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -78,6 +93,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="dev\inc\OpList_manege.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dev\inc\model_name.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

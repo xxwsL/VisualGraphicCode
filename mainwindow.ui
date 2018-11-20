@@ -32,10 +32,10 @@
    <widget class="QPushButton" name="Load">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>20</y>
+      <x>10</x>
+      <y>10</y>
       <width>75</width>
-      <height>23</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -61,10 +61,10 @@
    <widget class="QPushButton" name="Gray">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>20</y>
+      <x>780</x>
+      <y>10</y>
       <width>75</width>
-      <height>23</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -74,34 +74,34 @@
    <widget class="QPushButton" name="Display">
     <property name="geometry">
      <rect>
-      <x>700</x>
-      <y>20</y>
+      <x>190</x>
+      <y>10</y>
       <width>75</width>
-      <height>23</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
      <string>Display</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Threshold">
+   <widget class="QPushButton" name="Graph">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>20</y>
-      <width>75</width>
-      <height>23</height>
+      <x>90</x>
+      <y>10</y>
+      <width>93</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>Threshold</string>
+     <string>Graph</string>
     </property>
    </widget>
    <zorder>label</zorder>
    <zorder>Gray</zorder>
    <zorder>Load</zorder>
    <zorder>Display</zorder>
-   <zorder>Threshold</zorder>
+   <zorder>Graph</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

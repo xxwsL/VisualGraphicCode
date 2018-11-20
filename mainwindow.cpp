@@ -47,11 +47,13 @@ void MainWindow::on_Load_clicked(void)
 
 void MainWindow::on_Gray_clicked(void)
 {
-	mManeger().add_model(new Gray_op(&mManeger().mUstr.imgCopy, &mManeger().mUstr.imgCopy));
+	mManeger().add_model(new Gray_op(&mManeger().mUstr.imgCopy));
 	mManeger().run();
-	mManeger().display_Copy();
 }
 
 void MainWindow::on_Display_clicked(void) {
 	mManeger.display_seq();
+}
+
+void MainWindow::on_Graph_clicked(void){
 }

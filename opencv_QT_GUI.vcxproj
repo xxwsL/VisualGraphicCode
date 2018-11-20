@@ -185,9 +185,14 @@
     </QtUic>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="dev\src\button.cpp" />
     <ClCompile Include="dev\src\gray_op.cpp" />
+    <ClCompile Include="dev\src\list_graph.cpp" />
     <ClCompile Include="dev\src\OpList_manege.cpp" />
     <ClCompile Include="dev\src\op_list.cpp" />
+    <ClCompile Include="dev\test\src\test_Source.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainwindow.cpp" />
   </ItemGroup>
@@ -196,9 +201,22 @@
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="dev\inc\button.hpp">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\.;.\GeneratedFiles;.;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtWidgets;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtGui;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtANGLE;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtCore;.\debug;\include;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\mkspecs\win32-msvc</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">_WINDOWS;UNICODE;_UNICODE;WIN32;WIN64;_ENABLE_EXTENDED_ALIGNED_STORAGE;QT_DEPRECATED_WARNINGS;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\.;.\GeneratedFiles;.;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtWidgets;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtGui;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtANGLE;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtCore;.\release;\include;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\mkspecs\win32-msvc</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">_WINDOWS;UNICODE;_UNICODE;WIN32;WIN64;_ENABLE_EXTENDED_ALIGNED_STORAGE;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;NDEBUG</Define>
+    </QtMoc>
     <ClInclude Include="dev\inc\gray_op.hpp" />
     <ClInclude Include="dev\inc\image_op_base.hpp" />
     <ClInclude Include="dev\inc\image_op_inc.hpp" />
+    <QtMoc Include="dev\inc\list_graph.hpp">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\.;.\GeneratedFiles;.;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtWidgets;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtGui;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtANGLE;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtCore;.\debug;\include;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\mkspecs\win32-msvc</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">_WINDOWS;UNICODE;_UNICODE;WIN32;WIN64;_ENABLE_EXTENDED_ALIGNED_STORAGE;QT_DEPRECATED_WARNINGS;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\.;.\GeneratedFiles;.;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtWidgets;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtGui;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtANGLE;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtCore;.\release;\include;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\mkspecs\win32-msvc</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">_WINDOWS;UNICODE;_UNICODE;WIN32;WIN64;_ENABLE_EXTENDED_ALIGNED_STORAGE;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;NDEBUG</Define>
+    </QtMoc>
+    <ClInclude Include="dev\inc\model_name.hpp" />
     <ClInclude Include="dev\inc\OpList_manege.hpp" />
     <ClInclude Include="dev\inc\op_list.hpp" />
     <ClInclude Include="ui_mainwindow.h" />

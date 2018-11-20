@@ -10,6 +10,7 @@
 #define LIST_MAX 1
 #endif
 
+/*处理队列管理模块*/
 class OpListManege {
 	/*----------------------------data-------------------------------*/
 public:

@@ -17,8 +17,11 @@ class MainWindow : public QMainWindow
 
 	/*----------------------------data-------------------------------*/
 public:
+	//处理队列管理器
 	OpListManege mManeger;
+
 private:
+	//QT类型原始image
 	QImage imgSrc;
 
 	/*----------------------------function-------------------------------*/
@@ -33,6 +36,8 @@ private slots:
 	void on_Gray_clicked(void);
 
 	void on_Display_clicked(void);
+
+	void on_Graph_clicked(void);
 
 private:
 	Ui::MainWindow *ui;

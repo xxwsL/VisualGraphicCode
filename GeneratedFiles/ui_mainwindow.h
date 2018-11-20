@@ -31,7 +31,7 @@ public:
     QLabel *label;
     QPushButton *Gray;
     QPushButton *Display;
-    QPushButton *Threshold;
+    QPushButton *Graph;
     QMenuBar *menuBar;
     QMenu *file;
     QToolBar *mainToolBar;
@@ -50,25 +50,25 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         Load = new QPushButton(centralWidget);
         Load->setObjectName(QStringLiteral("Load"));
-        Load->setGeometry(QRect(620, 20, 75, 23));
+        Load->setGeometry(QRect(10, 10, 75, 31));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(40, 110, 791, 561));
         Gray = new QPushButton(centralWidget);
         Gray->setObjectName(QStringLiteral("Gray"));
-        Gray->setGeometry(QRect(10, 20, 75, 23));
+        Gray->setGeometry(QRect(780, 10, 75, 31));
         Display = new QPushButton(centralWidget);
         Display->setObjectName(QStringLiteral("Display"));
-        Display->setGeometry(QRect(700, 20, 75, 23));
-        Threshold = new QPushButton(centralWidget);
-        Threshold->setObjectName(QStringLiteral("Threshold"));
-        Threshold->setGeometry(QRect(110, 20, 75, 23));
+        Display->setGeometry(QRect(190, 10, 75, 31));
+        Graph = new QPushButton(centralWidget);
+        Graph->setObjectName(QStringLiteral("Graph"));
+        Graph->setGeometry(QRect(90, 10, 93, 31));
         MainWindow->setCentralWidget(centralWidget);
         label->raise();
         Gray->raise();
         Load->raise();
         Display->raise();
-        Threshold->raise();
+        Graph->raise();
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 862, 26));
@@ -99,7 +99,7 @@ public:
         label->setText(QString());
         Gray->setText(QApplication::translate("MainWindow", "Gray", nullptr));
         Display->setText(QApplication::translate("MainWindow", "Display", nullptr));
-        Threshold->setText(QApplication::translate("MainWindow", "Threshold", nullptr));
+        Graph->setText(QApplication::translate("MainWindow", "Graph", nullptr));
         file->setTitle(QApplication::translate("MainWindow", "file", nullptr));
     } // retranslateUi
 
