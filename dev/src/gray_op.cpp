@@ -12,7 +12,10 @@ Gray_op::Gray_op(cv::Mat *ptrIn_) {
 		exit(1);
 	}
 	else {
-		mUstr.TYPE = ModelName::Gray;
+		mUstr.TYPE.first = &ModelName::iGray;
+		mUstr.TYPE.second = &ModelName::strGray;
+		mUstr.mButton.init_set(ModelName::strGray.c_str());
+
 		mUstr.imgIn = ptrIn_;
 	}
 }
@@ -26,4 +29,8 @@ bool Gray_op::op(void) {
 bool Gray_op::display(void) {
 	cv::imshow("Gray_image", mUstr.imgOut);
 	return true;
+}
+
+BUTTON* Gray_op::read_button(void) {
+	return &mUstr.mButton;
 }

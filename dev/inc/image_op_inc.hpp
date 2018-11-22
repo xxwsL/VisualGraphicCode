@@ -4,9 +4,12 @@
 
 #ifndef HAVE_GRAY_OP
 #define HAVE_GRAY_OP
-#endif
-#ifdef HAVE_GRAY_OP
 #include "gray_op.hpp"
+#endif
+
+#ifndef HAVE_ADD_OP
+#define HAVE_ADD_OP
+#include "add_op.hpp"
 #endif
 
 #endif

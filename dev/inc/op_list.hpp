@@ -2,7 +2,7 @@
 #ifndef _op_list_hpp_
 #define _op_list_hpp_
 
-#include "image_op_base.hpp"
+#include "image_op_inc.hpp"
 #include "list_graph.hpp"
 
 #include <opencv.hpp>
@@ -16,7 +16,7 @@ public:
 		cv::Mat imgCopy;
 		std::vector<ImageOpBase*> vecTask;
 		std::string strFile_name;
-		ListGraph *ptrGraph;
+		ListGraph *ptrGraph = nullptr;
 	}Ustr;
 
 	Ustr mUstr;
@@ -38,8 +38,6 @@ public:
 	bool add_model(ImageOpBase *ptr_, const int & seq_ = -1);
 
 	bool run(void);
-
-	bool create_graph(void);
 
 };
 

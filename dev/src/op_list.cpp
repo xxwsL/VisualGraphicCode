@@ -20,7 +20,13 @@ OpList::OpList(const cv::Mat& imgSrc_, const std::string& file_name_) {
 	imgSrc_.copyTo(mUstr.imgCopy);
 	mUstr.strFile_name = file_name_;
 
-	mUstr.ptrGraph = nullptr;
+	mUstr.ptrGraph = new ListGraph;
+
+	mUstr.vecTask.push_back(new AddOp);
+	mUstr.ptrGraph->add_button(mUstr.vecTask[0]->read_button());
+
+	
+
 }
 
 
@@ -58,15 +64,4 @@ bool OpList::run(void) {
 		mUstr.vecTask.back()->display();
 	}
 	return true;
-}
-
-bool OpList::create_graph(void) {
-	if (mUstr.ptrGraph == nullptr) {
-		mUstr.ptrGraph = new ListGraph;
-		return true;
-	}
-	else
-	{
-		return false;
-	}
 }

@@ -5,17 +5,17 @@
 #include "button.hpp"
 #include "image_op_base.hpp"
 
-#include <qdialog.h>
+#include <qwidget.h>
 #include <qlayout.h>
 
 #include <vector>
 
-class ListGraph : public QDialog{
+class ListGraph : public QWidget{
 	Q_OBJECT
 	
 	/*----------------------------data-------------------------------*/
 public:
-	QGridLayout  *mLayout;
+	QGridLayout  mLayout;
 	std::vector<BUTTON*> vecBUTTON;
 
 	/*----------------------------function-------------------------------*/
@@ -23,8 +23,7 @@ public:
 	ListGraph(void);
 	~ListGraph(void);
 
-	bool create_button(std::vector<ImageOpBase*>& vec_);
-
+	bool add_button(BUTTON *button_, int seq_ = -1);
 };
 
 #endif

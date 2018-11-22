@@ -3,6 +3,7 @@
 #define _image_op_base_hpp_
 
 #include "image_op_base.hpp"
+#include "button.hpp"
 
 class ImageOpBase {
 	/*----------------------------function-------------------------------*/
@@ -13,6 +14,8 @@ public:
 	virtual bool op(void) = 0;
 
 	virtual bool display() = 0;
+
+	virtual BUTTON* read_button(void) = 0;
 };
 
 #endif
