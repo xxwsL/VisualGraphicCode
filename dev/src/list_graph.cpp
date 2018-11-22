@@ -12,7 +12,7 @@ ListGraph::~ListGraph(void) {
 
 bool ListGraph::add_button(BUTTON *button_, int seq_) {
 	if (seq_ == -1) {
-		mLayout.addWidget(button_, 0, vecBUTTON.size());
+		mLayout.addWidget(button_, 0, (int)vecBUTTON.size());
 		vecBUTTON.push_back(button_);
 		this->setLayout(&mLayout);
 		this->show();
