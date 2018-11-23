@@ -9,7 +9,11 @@
 
 #include <vector>
 
-class OpList {
+#include <qobject.h>
+
+class OpList : public QObject
+{
+	//Q_OBJECT
 	/*----------------------------data-------------------------------*/
 public:
 	typedef struct {
@@ -17,6 +21,7 @@ public:
 		std::vector<ImageOpBase*> vecTask;
 		std::string strFile_name;
 		ListGraph *ptrGraph = nullptr;
+		std::string strListName;
 	}Ustr;
 
 	Ustr mUstr;
@@ -29,7 +34,7 @@ public:
 	//OpList(void);
 	~OpList(void);
 
-	OpList(const cv::Mat& imgSrc_, const std::string& file_name_);
+	OpList(const cv::Mat& imgSrc_, const std::string& file_name_, const std::string& list_name_);
 
 	void display_Copy(void);
 

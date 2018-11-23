@@ -23,6 +23,8 @@ public:
 	ListGraph(void);
 	~ListGraph(void);
 
+	ListGraph(const std::string& name_);
+
 	bool add_button(BUTTON *button_, int seq_ = -1);
 };
 

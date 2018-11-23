@@ -7,13 +7,14 @@
 
 #include <qwidget.h>
 #include <qlayout.h>
+#include <qwidget.h>
 
-class AddOp : public ImageOpBase
+class AddOp : public QWidget, public ImageOpBase
 {
+	Q_OBJECT
 	/*----------------------------data-------------------------------*/
 public:
-	//QGridLayout mLayout;
-	//QWidget mWidget;
+	QGridLayout mLayout;
 	BUTTON mButton;
 	/*----------------------------function-------------------------------*/
 public:
@@ -26,5 +27,8 @@ public:
 	virtual bool display(void);
 
 	virtual BUTTON* read_button(void);
+
+private slots:
+	void show_(void);
 };
 #endif

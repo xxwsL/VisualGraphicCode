@@ -11,7 +11,7 @@ OpList::~OpList(void) {
 	}
 }
 
-OpList::OpList(const cv::Mat& imgSrc_, const std::string& file_name_) {
+OpList::OpList(const cv::Mat& imgSrc_, const std::string& file_name_, const std::string& list_name_) {
 	if (imgSrc_.empty()) {
 		std::cout << ">> Error : OpList imgSrc is empty\n";
 		while (std::cin.get() != '\n');
@@ -20,12 +20,12 @@ OpList::OpList(const cv::Mat& imgSrc_, const std::string& file_name_) {
 	imgSrc_.copyTo(mUstr.imgCopy);
 	mUstr.strFile_name = file_name_;
 
-	mUstr.ptrGraph = new ListGraph;
+	mUstr.strListName = list_name_;
+
+	mUstr.ptrGraph = new ListGraph(list_name_);
 
 	mUstr.vecTask.push_back(new AddOp);
 	mUstr.ptrGraph->add_button(mUstr.vecTask[0]->read_button());
-
-	
 
 }
 

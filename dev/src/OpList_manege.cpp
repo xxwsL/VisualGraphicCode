@@ -1,4 +1,5 @@
 #include "OpList_manege.hpp"
+#include "math_tool.hpp"
 
 OpListManege::OpListManege(void){}
 
@@ -12,9 +13,14 @@ OpListManege::~OpListManege(void) {
 >>创建一个处理队列
 imgSrc_ : 输入原始图像，file_name_ : 原始图像名字
 */
-bool OpListManege::create_Oplist(const cv::Mat& imgSrc_, const std::string& file_name_) {
+bool OpListManege::create_Oplist(const cv::Mat& imgSrc_, const std::string& file_name_, const std::string& list_name_) {
 	if (mUstr.vecOpLists.size() < LIST_MAX) {
-		mUstr.vecOpLists.push_back(new OpList(imgSrc_, file_name_));
+		if (list_name_.empty()) {
+			mUstr.vecOpLists.push_back(new OpList(imgSrc_, file_name_, MathTool::num_str(mUstr.vecOpLists.size()) + "_list"));
+		}
+		else {
+			mUstr.vecOpLists.push_back(new OpList(imgSrc_, file_name_, list_name_));
+		}
 		mUstr.siLoadList_label = (int)mUstr.vecOpLists.size() - 1;
 		return true;
 	}

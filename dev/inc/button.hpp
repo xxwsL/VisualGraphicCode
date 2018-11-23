@@ -2,7 +2,8 @@
 #ifndef _button_hpp_
 #define _button_hpp_
 
-#include <QToolButton>
+#include <qpushbutton.h>
+#include <qtoolbutton.h>
 
 class BUTTON : public QToolButton {
 	Q_OBJECT

@@ -25,7 +25,7 @@ public:
 	OpListManege(void);
 	~OpListManege(void);
 
-	bool create_Oplist(const cv::Mat& imgSrc_, const std::string& file_name_);
+	bool create_Oplist(const cv::Mat& imgSrc_, const std::string& file_name_, const std::string& list_name_ = "");
 
 	bool display_seq(const int& seq_ = -1);
 

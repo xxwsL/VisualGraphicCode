@@ -10,6 +10,10 @@ ListGraph::ListGraph(void) {
 ListGraph::~ListGraph(void) {
 }
 
+ListGraph::ListGraph(const std::string& name_) {
+	setWindowTitle(tr(name_.c_str()));
+}
+
 bool ListGraph::add_button(BUTTON *button_, int seq_) {
 	if (seq_ == -1) {
 		mLayout.addWidget(button_, 0, (int)vecBUTTON.size());
