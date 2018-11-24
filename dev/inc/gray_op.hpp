@@ -30,7 +30,7 @@ public:
 
 	virtual bool op(void);
 
-	virtual bool display(void);
+	virtual void display(void);
 
 	virtual BUTTON* read_button(void);
 };

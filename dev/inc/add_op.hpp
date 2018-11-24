@@ -7,7 +7,10 @@
 
 #include <qwidget.h>
 #include <qlayout.h>
+
 #include <qwidget.h>
+
+#include <vector>
 
 class AddOp : public QWidget, public ImageOpBase
 {
@@ -16,19 +19,30 @@ class AddOp : public QWidget, public ImageOpBase
 public:
 	QGridLayout mLayout;
 	BUTTON mButton;
+
+	typedef struct {
+		size_t siLoce_seq_ = 0;
+		std::pair<int*, std::string*>  TYPE;
+		std::vector<ImageOpBase*> *ptrBase_list;
+	}USTR;
+
+	USTR mUstr;
 	/*----------------------------function-------------------------------*/
 public:
-	AddOp();
-	~AddOp();
+	AddOp(std::vector<ImageOpBase*> *ptr_base_list_);
+	~AddOp(void);
 
 
-	virtual bool op(void);
+	inline virtual bool op(void);
 
-	virtual bool display(void);
+	virtual void display(void);
 
 	virtual BUTTON* read_button(void);
 
+private:
+	inline bool set(void);
+
 private slots:
-	void show_(void);
+	void QT_show(void);
 };
 #endif

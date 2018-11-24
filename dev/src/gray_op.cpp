@@ -26,9 +26,8 @@ bool Gray_op::op(void) {
 	return true;
 }
 
-bool Gray_op::display(void) {
+void Gray_op::display(void) {
 	cv::imshow("Gray_image", mUstr.imgOut);
-	return true;
 }
 
 BUTTON* Gray_op::read_button(void) {

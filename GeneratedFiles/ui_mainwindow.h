@@ -42,7 +42,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->setWindowModality(Qt::NonModal);
-        MainWindow->resize(862, 739);
+        MainWindow->resize(861, 752);
         MainWindow->setCursor(QCursor(Qt::ArrowCursor));
         MainWindow->setMouseTracking(false);
         MainWindow->setIconSize(QSize(24, 99));
@@ -53,7 +53,7 @@ public:
         Load->setGeometry(QRect(10, 10, 75, 31));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(40, 110, 791, 561));
+        label->setGeometry(QRect(10, 60, 841, 641));
         Gray = new QPushButton(centralWidget);
         Gray->setObjectName(QStringLiteral("Gray"));
         Gray->setGeometry(QRect(780, 10, 75, 31));
@@ -71,7 +71,7 @@ public:
         Graph->raise();
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 862, 26));
+        menuBar->setGeometry(QRect(0, 0, 861, 26));
         file = new QMenu(menuBar);
         file->setObjectName(QStringLiteral("file"));
         MainWindow->setMenuBar(menuBar);

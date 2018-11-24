@@ -5,8 +5,8 @@ BUTTON::BUTTON(void){}
 BUTTON::BUTTON(const QString &text, QWidget *parent)
 	: QToolButton(parent)
 {
-	setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-	setText(text);
+	this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+	this->setText(text);
 }
 
 

@@ -1,20 +1,23 @@
 #include "add_op.hpp"
 
-AddOp::AddOp(void) : mButton("+")
+AddOp::AddOp(std::vector<ImageOpBase*> *ptr_base_list_) : mButton(tr("+"))
 {
+	mUstr.ptrBase_list = ptr_base_list_;
+
+	connect(&mButton, &QToolButton::clicked, this, &AddOp::QT_show);
+	
 	setLayout(&mLayout);
-	connect(&mButton, SIGNAL(clicked()), this, SLOT(show_()));
 }
 
 AddOp::~AddOp(void){}
 
 
-bool AddOp::op(void) {
+
+inline bool AddOp::op(void) {
 	return true;
 }
 
-bool AddOp::display(void) {
-	return true;
+void AddOp::display(void) {
 }
 
 BUTTON* AddOp::read_button(void) {
@@ -22,6 +25,14 @@ BUTTON* AddOp::read_button(void) {
 }
 
 
-void AddOp::show_(void) {
+
+inline bool AddOp::set(void) {
+
+	return true;
+}
+
+
+
+void AddOp::QT_show(void) {
 	this->show();
 }
