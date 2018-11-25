@@ -4,6 +4,7 @@
 
 #include "image_op_base.hpp"
 #include "button.hpp"
+#include "model_name.hpp"
 
 #include <qwidget.h>
 #include <qlayout.h>
@@ -17,12 +18,12 @@ class AddOp : public QWidget, public ImageOpBase
 	Q_OBJECT
 	/*----------------------------data-------------------------------*/
 public:
-	QGridLayout mLayout;
+	QGridLayout *mLayout = nullptr;
 	BUTTON mButton;
 
 	typedef struct {
-		size_t siLoce_seq_ = 0;
-		std::pair<int*, std::string*>  TYPE;
+		size_t siLoca_seq = 0;
+		std::pair<int32_t*, std::string*>  TYPE;
 		std::vector<ImageOpBase*> *ptrBase_list;
 	}USTR;
 
@@ -40,7 +41,7 @@ public:
 	virtual BUTTON* read_button(void);
 
 private:
-	inline bool set(void);
+	inline void set(int32_t *ptr_int32_, std::string *ptr_str_);
 
 private slots:
 	void QT_show(void);

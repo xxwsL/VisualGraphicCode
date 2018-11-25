@@ -25,10 +25,10 @@ public:
 		Gray = IMG_IMG_TYPE,
 	}EM_IMG_IMG_TYPE;
 
-	static int iAdd;
+	static int32_t iAdd;
 	static std::string strAdd;
 
-	static int iGray;
+	static int32_t iGray;
 	static std::string strGray;
 };
 

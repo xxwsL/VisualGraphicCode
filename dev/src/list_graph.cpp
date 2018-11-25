@@ -11,7 +11,7 @@ ListGraph::~ListGraph(void) {
 }
 
 ListGraph::ListGraph(const std::string& name_) {
-	setWindowTitle(tr(name_.c_str()));
+	this->setWindowTitle(tr(name_.c_str()));
 }
 
 bool ListGraph::add_button(BUTTON *button_, int seq_) {
