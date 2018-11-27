@@ -13,9 +13,10 @@ public:
 
 	virtual bool op(void) = 0;
 
-	virtual void display() = 0;
+	virtual void display(void) = 0;
 
 	virtual BUTTON* read_button(void) = 0;
+
 };
 
 #endif

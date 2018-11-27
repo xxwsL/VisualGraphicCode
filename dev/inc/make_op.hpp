@@ -6,7 +6,7 @@
 #include "model_name.hpp"
 
 #include <qlayout.h>
-#include <qwidget.h>
+#include <qdialog.h>
 
 class make_op : QObject{
 	Q_OBJECT
@@ -19,15 +19,16 @@ public:
 	static QGridLayout *mSelect_layout;
 	
 	static BUTTON *mImg_img_button;
-	static QWidget *mImg_img_widget;
+	static QDialog *mImg_img_widget;
 	static QGridLayout *mImg_img_layout;
 
 	/*----------------------------function-------------------------------*/
 public:
-	inline static void init(void);
+	make_op(void);
 
-	inline static void remove_init(void);
+	~make_op(void);
 
+	static QGridLayout* get_layout(const int32_t& flag_);
 private:
 	inline static void init_variable(void);
 

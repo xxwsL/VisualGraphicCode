@@ -7,18 +7,18 @@
 #include <qlayout.h>
 
 #ifndef ADD_TYPE 
-#define ADD_TYPE 0
+#define ADD_TYPE_ALL 0
 #endif 
 
 #ifndef IMG_IMG_TYPE
-#define IMG_IMG_TYPE ADD_TYPE+1
+#define IMG_IMG_TYPE ADD_TYPE_ALL + 100
 #endif
 
 class ModelName{
 	/*----------------------------data-------------------------------*/
 public:
 	typedef enum {
-		Add = ADD_TYPE
+		Add = ADD_TYPE_ALL
 	}EM_ADD_TYPE;
 
 	typedef enum {

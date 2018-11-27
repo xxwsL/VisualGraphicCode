@@ -3,6 +3,8 @@
 #define _OpList_manege_hpp_
 
 #include "op_list.hpp"
+#include "math_tool.hpp"
+#include "make_op.hpp"
 
 #include <vector>
 
@@ -20,6 +22,8 @@ public:
 	}USTR;
 
 	USTR mUstr;
+	make_op mMaker;
+
 	/*----------------------------function-------------------------------*/
 public:
 	OpListManege(void);

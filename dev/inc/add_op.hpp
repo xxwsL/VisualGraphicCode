@@ -5,15 +5,17 @@
 #include "image_op_base.hpp"
 #include "button.hpp"
 #include "model_name.hpp"
+#include "make_op.hpp"
 
 #include <qwidget.h>
 #include <qlayout.h>
 
 #include <qwidget.h>
+#include <qdialog.h>
 
 #include <vector>
 
-class AddOp : public QWidget, public ImageOpBase
+class AddOp : public QDialog, public ImageOpBase
 {
 	Q_OBJECT
 	/*----------------------------data-------------------------------*/
@@ -30,7 +32,7 @@ public:
 	USTR mUstr;
 	/*----------------------------function-------------------------------*/
 public:
-	AddOp(std::vector<ImageOpBase*> *ptr_base_list_);
+	AddOp(std::vector<ImageOpBase*> *ptr_base_list_, int32_t *ptr_int32_, std::string *ptr_str_);
 	~AddOp(void);
 
 

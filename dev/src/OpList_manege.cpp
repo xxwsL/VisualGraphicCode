@@ -1,7 +1,8 @@
 #include "OpList_manege.hpp"
-#include "math_tool.hpp"
 
-OpListManege::OpListManege(void){}
+OpListManege::OpListManege(void){
+	
+}
 
 OpListManege::~OpListManege(void) {
 	for (size_t i = 0; i < mUstr.vecOpLists.size(); ++i) {
