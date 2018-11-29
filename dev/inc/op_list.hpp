@@ -10,6 +10,7 @@
 #include <vector>
 
 #include <qobject.h>
+#include <qmessagebox.h>
 
 class OpList : public QObject
 {
@@ -36,13 +37,15 @@ public:
 
 	OpList(const cv::Mat& imgSrc_, const std::string& file_name_, const std::string& list_name_);
 
-	void display_Copy(void);
+	void display_Copy(void) const;
 
-	void display_Src(void);
+	void display_Src(void) const;
 
 	bool add_model(ImageOpBase *ptr_, const int & seq_ = -1);
 
 	bool run(void);
+
+	void display_graph(void) const;
 
 };
 

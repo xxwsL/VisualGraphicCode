@@ -13,8 +13,10 @@ OpList::~OpList(void) {
 
 OpList::OpList(const cv::Mat& imgSrc_, const std::string& file_name_, const std::string& list_name_) {
 	if (imgSrc_.empty()) {
-		std::cout << ">> Error : OpList imgSrc is empty\n";
-		while (std::cin.get() != '\n');
+		QMessageBox msgBox;
+		msgBox.setText(tr("Error : OpList create fail"));
+		msgBox.exec();
+		exit(1);
 	}
 	imgSrc_.copyTo(imgSrc);
 	imgSrc_.copyTo(mUstr.imgCopy);
@@ -30,12 +32,12 @@ OpList::OpList(const cv::Mat& imgSrc_, const std::string& file_name_, const std:
 }
 
 
-void OpList::display_Copy(void) {
+void OpList::display_Copy(void) const {
 	cv::imshow("imgCopy", mUstr.imgCopy);
 }
 
 
-void OpList::display_Src(void) {
+void OpList::display_Src(void) const {
 	cv::imshow(mUstr.strFile_name, imgSrc);
 }
 
@@ -64,4 +66,11 @@ bool OpList::run(void) {
 		mUstr.vecTask.back()->display();
 	}
 	return true;
+}
+
+
+void OpList::display_graph(void) const {
+	if (mUstr.ptrGraph) {
+		mUstr.ptrGraph->show();
+	}
 }

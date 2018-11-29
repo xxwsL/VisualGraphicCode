@@ -2,20 +2,18 @@
  
 ImageOpBase *make_op::ptrMake_op = nullptr;
 
-QGridLayout *make_op::mSelect_layout = nullptr;
-
-BUTTON *make_op::mImg_img_button = nullptr;
-QDialog *make_op::mImg_img_widget = nullptr;
-QGridLayout *make_op::mImg_img_layout = nullptr;
+make_op::MAKE_GUI make_op::mMake_GUI;
 
 make_op::make_op(void) {
-	init_variable();
+	init_GUI();
 
-	connect(mImg_img_button, &QToolButton::clicked, [](){
-		mImg_img_widget->exec();
+	connect(mMake_GUI.mImg_img_button, &QToolButton::clicked, [](){
+		mMake_GUI.mImg_img_dialog->exec();
 	});
 
-	mSelect_layout->addWidget(mImg_img_button);
+	mMake_GUI.mSelect_layout->addWidget(mMake_GUI.mImg_img_button);
+
+	mMake_GUI.mImg_img_dialog->setLayout(mMake_GUI.mImg_img_layout);
 }
 
 make_op::~make_op(void) {
@@ -26,23 +24,39 @@ make_op::~make_op(void) {
 	//delete mImg_img_layout;
 }
 
-inline void make_op::init_variable(void) {
-	mSelect_layout = new QGridLayout;
-
-	mImg_img_button = new BUTTON("img > img");
-	mImg_img_widget = new QDialog;
-	mImg_img_widget->setWindowTitle("img > img_model_list");
-	mImg_img_layout = new QGridLayout;
-	
-}
-
 QGridLayout* make_op::get_layout(const int32_t& flag_) {
 	switch (flag_) {
 	case ModelName::EM_ADD_TYPE::Add: {
-		return mSelect_layout;
+		return mMake_GUI.mSelect_layout;
+	}break;
+	case ModelName::EM_IMG_IMG_TYPE::Gray: {
+		return  mMake_GUI.mImg_img_layout;
 	}break;
 	default: {
-		return mSelect_layout;
+		return mMake_GUI.mSelect_layout;
 	}break;
 	}
+}
+
+void make_op::load_creater(void) {
+	
+}
+
+void make_op::init_GUI(void) {
+	mMake_GUI.mSelect_layout = new QGridLayout;
+
+	mMake_GUI.mImg_img_button = new BUTTON("img > img");
+	mMake_GUI.mImg_img_dialog = new QDialog;
+	mMake_GUI.mImg_img_dialog->setWindowTitle("img > img_model_list");
+	mMake_GUI.mImg_img_layout = new QGridLayout;
+
+	init_button();
+}
+
+void make_op::init_button(void) {
+	BUTTON *mGray = new BUTTON("Gray");
+	connect(mGray, &QToolButton::clicked, []() {
+		ptrMake_op = Gray_op::create(0);
+	});
+	mMake_GUI.mImg_img_layout->addWidget(mGray);
 }

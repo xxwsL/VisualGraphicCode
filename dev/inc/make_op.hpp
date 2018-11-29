@@ -8,6 +8,8 @@
 #include <qlayout.h>
 #include <qdialog.h>
 
+#include <vector>
+
 class make_op : QObject{
 	Q_OBJECT
 
@@ -16,12 +18,19 @@ public:
 	static ImageOpBase *ptrMake_op;
 
 public:
-	static QGridLayout *mSelect_layout;
-	
-	static BUTTON *mImg_img_button;
-	static QDialog *mImg_img_widget;
-	static QGridLayout *mImg_img_layout;
+	typedef struct {
+		QGridLayout *mSelect_layout = nullptr;
 
+		BUTTON *mImg_img_button = nullptr;
+		QDialog *mImg_img_dialog = nullptr;
+		QGridLayout *mImg_img_layout = nullptr;
+	}MAKE_GUI;
+
+	typedef struct {
+	}BUTTON_VEC_LIST;
+
+	static MAKE_GUI mMake_GUI;
+	//static BUTTON_VEC_LIST mButton_vec_list;
 	/*----------------------------function-------------------------------*/
 public:
 	make_op(void);
@@ -29,8 +38,14 @@ public:
 	~make_op(void);
 
 	static QGridLayout* get_layout(const int32_t& flag_);
+
+	void load_creater(void);
+
 private:
-	inline static void init_variable(void);
+	static void init_GUI(void);
+
+	static void init_button(void);
 
 };
+
 #endif

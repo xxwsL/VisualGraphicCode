@@ -14,7 +14,9 @@
 #include <qdialog.h>
 
 #include <vector>
-
+/*
+Ä£¿éÌí¼ÓÄ£¿é
+*/
 class AddOp : public QDialog, public ImageOpBase
 {
 	Q_OBJECT
@@ -32,9 +34,9 @@ public:
 	USTR mUstr;
 	/*----------------------------function-------------------------------*/
 public:
-	AddOp(std::vector<ImageOpBase*> *ptr_base_list_, int32_t *ptr_int32_, std::string *ptr_str_);
+	AddOp(void);
 	~AddOp(void);
-
+	AddOp(std::vector<ImageOpBase*> *ptr_base_list_, int32_t *ptr_int32_, std::string *ptr_str_);
 
 	inline virtual bool op(void);
 
@@ -42,8 +44,10 @@ public:
 
 	virtual BUTTON* read_button(void);
 
+	static ImageOpBase* create(int32_t *flag_);
+
 private:
-	inline void set(int32_t *ptr_int32_, std::string *ptr_str_);
+	inline void set(std::vector<ImageOpBase*> *ptr_base_list_, int32_t *ptr_int32_, std::string *ptr_str_);
 
 private slots:
 	void QT_show(void);

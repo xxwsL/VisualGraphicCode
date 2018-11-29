@@ -11,7 +11,7 @@
 #endif 
 
 #ifndef IMG_IMG_TYPE
-#define IMG_IMG_TYPE ADD_TYPE_ALL + 100
+#define IMG_IMG_TYPE ADD_TYPE_ALL + 1
 #endif
 
 class ModelName{

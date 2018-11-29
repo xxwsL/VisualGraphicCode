@@ -23,7 +23,7 @@ public:
 	USTR mUstr;
 	/*----------------------------function-------------------------------*/
 public:
-	//Gray_op(void);
+	Gray_op(void);
 	~Gray_op(void);
 
 	Gray_op(cv::Mat *ptrIn_);
@@ -33,6 +33,8 @@ public:
 	virtual void display(void);
 
 	virtual BUTTON* read_button(void);
+
+	static ImageOpBase* create(int32_t *flag_);
 };
 
 #endif
