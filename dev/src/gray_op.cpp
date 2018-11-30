@@ -3,7 +3,9 @@
 
 Gray_op::Gray_op(void) {}
 
-Gray_op::~Gray_op(void) {}
+Gray_op::~Gray_op(void) {
+	delete mUstr.mInterface.imgOut;
+}
 
 Gray_op::Gray_op(cv::Mat *ptrIn_) {
 	if (ptrIn_->empty()) {
@@ -16,22 +18,27 @@ Gray_op::Gray_op(cv::Mat *ptrIn_) {
 		mUstr.TYPE.second = &ModelName::strGray;
 		mUstr.mButton.init_set(ModelName::strGray.c_str());
 
-		mUstr.imgIn = ptrIn_;
+		mUstr.mInterface.imgIn = ptrIn_;
+		mUstr.mInterface.imgOut = new cv::Mat;
 	}
 }
 
 bool Gray_op::op(void) {
 	cv::Mat img;
-	cv::cvtColor(*mUstr.imgIn, mUstr.imgOut, CV_BGR2GRAY);
+	cv::cvtColor(*mUstr.mInterface.imgIn, *mUstr.mInterface.imgOut, CV_BGR2GRAY);
 	return true;
 }
 
 void Gray_op::display(void) {
-	cv::imshow("Gray_image", mUstr.imgOut);
+	cv::imshow("Gray_image", *mUstr.mInterface.imgOut);
 }
 
-BUTTON* Gray_op::read_button(void) {
+BUTTON* Gray_op::read_button_ptr(void) {
 	return &mUstr.mButton;
+}
+
+void* Gray_op::read_interface_ptr(void) {
+	return &mUstr.mInterface;
 }
 
 ImageOpBase* Gray_op::create(int32_t *flag_) {

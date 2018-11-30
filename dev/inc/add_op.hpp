@@ -38,11 +38,7 @@ public:
 	~AddOp(void);
 	AddOp(std::vector<ImageOpBase*> *ptr_base_list_, int32_t *ptr_int32_, std::string *ptr_str_);
 
-	inline virtual bool op(void);
-
-	virtual void display(void);
-
-	virtual BUTTON* read_button(void);
+	base_fi
 
 	static ImageOpBase* create(int32_t *flag_);
 

@@ -14,11 +14,14 @@ inline bool AddOp::op(void) {
 	return true;
 }
 
-void AddOp::display(void) {
+void AddOp::display(void) {}
+
+BUTTON* AddOp::read_button_ptr(void) {
+	return &mButton;
 }
 
-BUTTON* AddOp::read_button(void) {
-	return &mButton;
+void* AddOp::read_interface_ptr(void) {
+	return nullptr;
 }
 
 ImageOpBase* AddOp::create(int32_t *flag_) {
@@ -35,11 +38,13 @@ inline void AddOp::set(std::vector<ImageOpBase*> *ptr_base_list_, int32_t *ptr_i
 	mUstr.ptrBase_list = ptr_base_list_;
 	mUstr.TYPE.first = ptr_int32_;
 	mUstr.TYPE.second = ptr_str_;
-	this->setLayout(make_op::get_layout(*ptr_int32_));
+	this->setLayout(make_op::read_layout_ptr(*ptr_int32_));
 }
-
-
 
 void AddOp::QT_show(void) {
 	this->exec();
+	if (make_op::ptrMake_op != nullptr) {
+		
+		make_op::ptrMake_op = nullptr;
+	}
 }

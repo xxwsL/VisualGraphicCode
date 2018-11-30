@@ -26,20 +26,15 @@ public:
 		QGridLayout *mImg_img_layout = nullptr;
 	}MAKE_GUI;
 
-	typedef struct {
-	}BUTTON_VEC_LIST;
-
 	static MAKE_GUI mMake_GUI;
-	//static BUTTON_VEC_LIST mButton_vec_list;
+
 	/*----------------------------function-------------------------------*/
 public:
 	make_op(void);
 
 	~make_op(void);
 
-	static QGridLayout* get_layout(const int32_t& flag_);
-
-	void load_creater(void);
+	static QGridLayout* read_layout_ptr(const int32_t& flag_);
 
 private:
 	static void init_GUI(void);
