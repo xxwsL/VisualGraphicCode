@@ -5,6 +5,7 @@
 #include <opencv.hpp>
 
 #include <qwidget.h>
+#include <qmessagebox.h>
 
 #include "image_op_base.hpp"
 #include "button.hpp"
@@ -27,7 +28,7 @@ public:
 
 	Gray_op(cv::Mat *ptrIn_);
 
-	base_fi
+	image_op_base_fi
 
 	static ImageOpBase* create(int32_t *flag_);
 };

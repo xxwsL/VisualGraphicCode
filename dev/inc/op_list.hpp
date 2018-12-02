@@ -4,6 +4,7 @@
 
 #include "image_op_inc.hpp"
 #include "list_graph.hpp"
+#include "in_out_op.hpp"
 
 #include <opencv.hpp>
 

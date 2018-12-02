@@ -43,8 +43,7 @@ inline void AddOp::set(std::vector<ImageOpBase*> *ptr_base_list_, int32_t *ptr_i
 
 void AddOp::QT_show(void) {
 	this->exec();
-	if (make_op::ptrMake_op != nullptr) {
-		
+	if (make_op::ptrMake_op != nullptr) {	
 		make_op::ptrMake_op = nullptr;
 	}
 }

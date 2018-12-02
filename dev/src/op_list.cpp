@@ -26,8 +26,10 @@ OpList::OpList(const cv::Mat& imgSrc_, const std::string& file_name_, const std:
 
 	mUstr.ptrGraph = new ListGraph(list_name_);
 
+	mUstr.vecTask.push_back(new IO_op(&mUstr.imgCopy));
+	mUstr.ptrGraph->add_button(mUstr.vecTask.back()->read_button_ptr());
 	mUstr.vecTask.push_back(new AddOp(&mUstr.vecTask, &ModelName::iAdd, &ModelName::strAdd));
-	mUstr.ptrGraph->add_button(mUstr.vecTask[0]->read_button_ptr());
+	mUstr.ptrGraph->add_button(mUstr.vecTask.back()->read_button_ptr());
 
 }
 

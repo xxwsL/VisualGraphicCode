@@ -9,8 +9,9 @@ Gray_op::~Gray_op(void) {
 
 Gray_op::Gray_op(cv::Mat *ptrIn_) {
 	if (ptrIn_->empty()) {
-		std::cout << "Error £» ptrImg_ is empty for Gray_op create\n";
-		while (std::cin.get() != '\n');
+		QMessageBox msgBox;
+		msgBox.setText("Error : ptrImg_ is empty for Gray_op create\n");
+		msgBox.exec();
 		exit(1);
 	}
 	else {

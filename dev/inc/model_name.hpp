@@ -8,7 +8,7 @@
 
 /*模块添加模块宏*/
 #ifndef ADD_TYPE 
-#define ADD_TYPE_ALL 0
+#define ADD_TYPE_ALL 100
 #endif 
 
 /*img_img模块宏*/
@@ -21,17 +21,22 @@ class ModelName{
 public:
 	//模块添加模块flag
 	typedef enum {
-		Add = ADD_TYPE_ALL
+		In,
+		Add = ADD_TYPE_ALL,
 	}EM_ADD_TYPE;
 
 	//img_img模块flag
 	typedef enum {
-		Gray = IMG_IMG_TYPE,
+		Img_img = IMG_IMG_TYPE,
+		Gray,
 	}EM_IMG_IMG_TYPE;
 
 	//模块添加模块类型数据
 	static int32_t iAdd;
 	static std::string strAdd;
+
+	static int32_t iIn;
+	static std::string strIn;
 
 	//img_img模块类型数据
 	static int32_t iGray;

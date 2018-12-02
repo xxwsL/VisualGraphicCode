@@ -36,7 +36,7 @@ QGridLayout* make_op::read_layout_ptr(const int32_t& flag_) {
 	case ModelName::EM_ADD_TYPE::Add: {
 		return mMake_GUI.mSelect_layout;
 	}break;
-	case ModelName::EM_IMG_IMG_TYPE::Gray: {
+	case ModelName::EM_IMG_IMG_TYPE::Img_img: {
 		return  mMake_GUI.mImg_img_layout;
 	}break;
 	default: {

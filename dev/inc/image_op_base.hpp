@@ -14,11 +14,11 @@ display : 显示或打印输出
 reda_button_ptr : 读取按键对象指针
 read_intreface_ptr : 读取接口指针
 */
-#ifndef base_fi
-#define base_fi virtual bool op(void); \
-				virtual void display(void); \
-				virtual BUTTON* read_button_ptr(void); \
-				virtual void* read_interface_ptr(void);
+#ifndef image_op_base_fi
+#define image_op_base_fi virtual bool op(void); \
+						 virtual void display(void); \
+						 virtual BUTTON* read_button_ptr(void); \
+						 virtual void* read_interface_ptr(void);
 #endif
 
 /*
