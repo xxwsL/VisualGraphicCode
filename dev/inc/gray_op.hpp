@@ -15,7 +15,7 @@ class Gray_op : public ImageOpBase
 	/*----------------------------data-------------------------------*/
 public:
 	typedef struct {
-		std::pair<int* , std::string*>  TYPE;
+		std::pair<const int* , const std::string*>  TYPE;
 		ImageOpBase::IMG_IMG_INTERFACE mInterface;
 		BUTTON mButton;
 	}USTR;
@@ -26,11 +26,11 @@ public:
 	Gray_op(void);
 	~Gray_op(void);
 
-	Gray_op(cv::Mat *ptrIn_);
-
 	image_op_base_fi
 
 	static ImageOpBase* create(int32_t *flag_);
+
+	void set(cv::Mat *ptrIn_, cv::Mat *ptrOut);
 };
 
 #endif

@@ -38,16 +38,16 @@ void MainWindow::on_Load_clicked(void)
 	else
 	{
 		QMessageBox msgBox;
-		msgBox.setText(tr("image data is null"));
+		msgBox.setText(tr("Error : image data is null"));
 		msgBox.exec();
 	}
 
 }
 
 
-void MainWindow::on_Gray_clicked(void)
+void MainWindow::on_Run_clicked(void)
 {
-	mManeger().add_model(new Gray_op(&mManeger().mUstr.imgCopy));
+	//mManeger().add_model(new Gray_op(&mManeger().mUstr.imgCopy));
 	mManeger().run();
 }
 
@@ -56,4 +56,7 @@ void MainWindow::on_Display_clicked(void) {
 }
 
 void MainWindow::on_Graph_clicked(void){
+	if (mManeger.mUstr.siLoadList_label >= 0) {
+		mManeger().mUstr.ptrGraph->show();
+	}
 }

@@ -3,12 +3,12 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <IncludePath>E:\opencv-3.2.0\contrib\install\include;E:\opencv-3.2.0\opencv\build\include\opencv2;E:\opencv-3.2.0\opencv\build\include\opencv;E:\opencv-3.2.0\opencv\build\include;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\opencv-3.2.0\contrib\install\x64\vc14\lib;E:\opencv-3.2.0\opencv\build\x64\vc14\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\SDK\opencv\opencv3.4.0\opencv\build\include;D:\SDK\opencv\opencv3.4.0\opencv\build\include\opencv;D:\SDK\opencv\opencv3.4.0\opencv\build\include\opencv2;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\SDK\opencv\opencv3.4.0\opencv\build\x64\vc14\lib;D:\SDK\opencv\opencv3.4.0\opencv\build\x64\vc15\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <Link>
-      <AdditionalDependencies>opencv_world320.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_world340.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup />

@@ -29,3 +29,7 @@ BUTTON* IO_op::read_button_ptr(void) {
 void* IO_op::read_interface_ptr(void) {
 	return mUstr.imgptr;
 }
+
+void IO_op::load_interface_ptr(void* interface_) {
+	return;
+}

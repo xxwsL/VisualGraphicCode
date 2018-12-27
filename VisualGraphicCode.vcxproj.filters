@@ -67,6 +67,9 @@
     <ClCompile Include="dev\src\make_op.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="dev\src\in_out_op.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dev\inc\OpList_manege.hpp">
@@ -124,6 +127,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="dev\inc\make_op.hpp">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="dev\inc\in_out_op.hpp">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

@@ -18,7 +18,8 @@ read_intreface_ptr : 读取接口指针
 #define image_op_base_fi virtual bool op(void); \
 						 virtual void display(void); \
 						 virtual BUTTON* read_button_ptr(void); \
-						 virtual void* read_interface_ptr(void);
+						 virtual void* read_interface_ptr(void); \
+						 virtual void load_interface_ptr(void* ptrInterface_); 
 #endif
 
 /*
@@ -28,10 +29,17 @@ class ImageOpBase {
 	/*----------------------------data-------------------------------*/
 public:
 	//img_img 模块接口数据结构
-	typedef struct {
-		cv::Mat *imgIn = nullptr;
-		cv::Mat *imgOut = nullptr;
-	}IMG_IMG_INTERFACE;
+	typedef std::pair<cv::Mat*, cv::Mat*> IMG_IMG_INTERFACE;
+
+	//接口属性
+	typedef enum {
+		left = 0,
+		right,
+	}INTERFACE_ATTRIBUTE;
+
+	//接口模板
+	typedef std::pair<void*, void*> INTERFACE_TEMPLATE;
+
 
 	/*----------------------------function-------------------------------*/
 public:
@@ -45,6 +53,8 @@ public:
 	virtual BUTTON* read_button_ptr(void) = 0;
 
 	virtual void* read_interface_ptr(void) = 0;
+
+	virtual void load_interface_ptr(void* ptrInterface_) = 0;
 
 };
 

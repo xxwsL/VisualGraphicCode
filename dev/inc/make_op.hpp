@@ -16,6 +16,7 @@ class make_op : QObject{
 	/*----------------------------data-------------------------------*/
 public:
 	static ImageOpBase *ptrMake_op;
+	static int32_t ptrCreate_flag;
 
 public:
 	typedef struct {
@@ -25,6 +26,8 @@ public:
 		QDialog *mImg_img_dialog = nullptr;
 		QGridLayout *mImg_img_layout = nullptr;
 	}MAKE_GUI;
+
+	
 
 	static MAKE_GUI mMake_GUI;
 

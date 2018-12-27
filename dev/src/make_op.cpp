@@ -1,6 +1,7 @@
 #include "make_op.hpp"
  
 ImageOpBase *make_op::ptrMake_op = nullptr;
+int32_t make_op::ptrCreate_flag = NULL;
 
 make_op::MAKE_GUI make_op::mMake_GUI;
 
@@ -68,7 +69,8 @@ void make_op::init_button(void) {
 	//³õÊ¼»¯ Gray Ä£¿é
 	BUTTON *mGray = new BUTTON("Gray");
 	connect(mGray, &QToolButton::clicked, []() {
-		ptrMake_op = Gray_op::create(0);
+		ptrMake_op = Gray_op::create(nullptr);
+		ptrCreate_flag = ModelName::iGray;
 	});
 	mMake_GUI.mImg_img_layout->addWidget(mGray);
 }

@@ -33,7 +33,7 @@ private slots:
 	
 	void on_Load_clicked(void);
 
-	void on_Gray_clicked(void);
+	void on_Run_clicked(void);
 
 	void on_Display_clicked(void);
 

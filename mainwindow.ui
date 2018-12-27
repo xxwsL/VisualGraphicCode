@@ -58,7 +58,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="Gray">
+   <widget class="QPushButton" name="Run">
     <property name="geometry">
      <rect>
       <x>780</x>
@@ -68,7 +68,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Gray</string>
+     <string>Run</string>
     </property>
    </widget>
    <widget class="QPushButton" name="Display">
@@ -98,7 +98,7 @@
     </property>
    </widget>
    <zorder>label</zorder>
-   <zorder>Gray</zorder>
+   <zorder>Run</zorder>
    <zorder>Load</zorder>
    <zorder>Display</zorder>
    <zorder>Graph</zorder>

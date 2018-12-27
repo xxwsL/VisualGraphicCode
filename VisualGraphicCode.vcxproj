@@ -179,6 +179,7 @@
     </QtUic>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="dev\src\in_out_op.cpp" />
     <ClCompile Include="dev\src\make_op.cpp" />
     <ClCompile Include="dev\src\OpList_manege.cpp" />
     <ClCompile Include="dev\src\add_op.cpp" />
@@ -192,6 +193,12 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="dev\inc\make_op.hpp">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\.;.\GeneratedFiles;.;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtWidgets;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtGui;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtANGLE;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtCore;.\debug;\include;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\mkspecs\win32-msvc</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">_WINDOWS;UNICODE;_UNICODE;WIN32;WIN64;_ENABLE_EXTENDED_ALIGNED_STORAGE;QT_DEPRECATED_WARNINGS;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\.;.\GeneratedFiles;.;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtWidgets;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtGui;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtANGLE;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtCore;.\release;\include;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\mkspecs\win32-msvc</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">_WINDOWS;UNICODE;_UNICODE;WIN32;WIN64;_ENABLE_EXTENDED_ALIGNED_STORAGE;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;NDEBUG</Define>
+    </QtMoc>
+    <QtMoc Include="dev\inc\in_out_op.hpp">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\.;.\GeneratedFiles;.;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtWidgets;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtGui;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtANGLE;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtCore;.\debug;\include;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\mkspecs\win32-msvc</IncludePath>
       <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">_WINDOWS;UNICODE;_UNICODE;WIN32;WIN64;_ENABLE_EXTENDED_ALIGNED_STORAGE;QT_DEPRECATED_WARNINGS;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\.;.\GeneratedFiles;.;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtWidgets;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtGui;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtANGLE;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\include\QtCore;.\release;\include;.\..\..\..\SDK\QT\QT5.11.2\5.11.2\MSVC2017_64\mkspecs\win32-msvc</IncludePath>

@@ -1,4 +1,5 @@
 #include "op_list.hpp"
+#include "image_op_inc.hpp"
 
 //OpList::OpList(void){}
 
@@ -26,10 +27,9 @@ OpList::OpList(const cv::Mat& imgSrc_, const std::string& file_name_, const std:
 
 	mUstr.ptrGraph = new ListGraph(list_name_);
 
-	mUstr.vecTask.push_back(new IO_op(&mUstr.imgCopy));
-	mUstr.ptrGraph->add_button(mUstr.vecTask.back()->read_button_ptr());
-	mUstr.vecTask.push_back(new AddOp(&mUstr.vecTask, &ModelName::iAdd, &ModelName::strAdd));
-	mUstr.ptrGraph->add_button(mUstr.vecTask.back()->read_button_ptr());
+	add_model(new IO_op(&mUstr.imgCopy));
+	add_model(new AddOp(this, &ModelName::iAdd, &ModelName::strAdd, mUstr.vecTask.size(), \
+		std::make_pair(mUstr.vecTask[0]->read_interface_ptr(), nullptr)));
 
 }
 
@@ -44,14 +44,19 @@ void OpList::display_Src(void) const {
 }
 
 bool OpList::add_model(ImageOpBase *ptr_, const int & seq_) {
-	if (seq_ > (int)mUstr.vecTask.size()) {
-		return false;
+	if (!ptr_) {
+		QMessageBox msgBox;
+		msgBox.setText(tr("Error : OpList->add_model parame : ImageOpBase *ptr_ is empty"));
+		msgBox.exec();
+		exit(1);
 	}
-	else if(seq_ < 0){
+	if (seq_ < 0 || seq_ >= (int)mUstr.vecTask.size()) {
 		mUstr.vecTask.push_back(ptr_);
+		mUstr.ptrGraph->add_button(mUstr.vecTask.back()->read_button_ptr());
 	}
 	else {
 		mUstr.vecTask.insert(mUstr.vecTask.begin() + seq_, ptr_);
+		mUstr.ptrGraph->add_button(mUstr.vecTask[seq_]->read_button_ptr(), seq_);
 	}
 	return true;
 }
@@ -61,11 +66,11 @@ bool OpList::run(void) {
 	for (size_t i = 0; i < mUstr.vecTask.size(); ++i) {
 		mUstr.vecTask[i]->op();
 	}
-	if (mUstr.vecTask.empty()) {
+	if (mUstr.vecTask.size() == 2) {
 		display_Copy();
 	}
 	else {
-		mUstr.vecTask.back()->display();
+		(*(mUstr.vecTask.end() - 2))->display();
 	}
 	return true;
 }
