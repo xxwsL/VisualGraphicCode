@@ -8,38 +8,42 @@
 
 /*模块添加模块宏*/
 #ifndef ADD_TYPE 
-#define ADD_TYPE_ALL 100
+#define ADD_TYPE 99
 #endif 
 
 /*img_img模块宏*/
-#ifndef IMG_IMG_TYPE
-#define IMG_IMG_TYPE ADD_TYPE_ALL + 1
+#ifndef MAT_NAT_TYPE
+#define MAT_ALL_TYPE 100
 #endif
 
 class ModelName{
 	/*----------------------------data-------------------------------*/
 public:
+
 	//模块添加模块flag
 	typedef enum {
 		In,
-		Add = ADD_TYPE_ALL,
+		Add = ADD_TYPE,
 	}EM_ADD_TYPE;
 
-	//img_img模块flag
+	//mat_mat模块flag
 	typedef enum {
-		Img_img = IMG_IMG_TYPE,
-		Gray,
-	}EM_IMG_IMG_TYPE;
+		Mat_all = MAT_ALL_TYPE,
+		Mat_mat,
+	}EM_MAT_TYPE;
+
+	//mat_all类型标志
+	static int32_t i32Mat_all;
+	//mat_mat类型标志
+	static int32_t i32Mat_mat;
 
 	//模块添加模块类型数据
-	static int32_t iAdd;
 	static std::string strAdd;
 
-	static int32_t iIn;
+	//模块输入数据类型
 	static std::string strIn;
 
-	//img_img模块类型数据
-	static int32_t iGray;
+	//mat_mat模块类型数据
 	static std::string strGray;
 };
 

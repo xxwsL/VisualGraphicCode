@@ -9,13 +9,20 @@
 
 #include "image_op_base.hpp"
 #include "button.hpp"
+#include "model_name.hpp"
 
 class Gray_op : public ImageOpBase
 {
 	/*----------------------------data-------------------------------*/
 public:
+	/*
+	TYPE : 模块类型
+	mInterface ：模块接口
+	mButton ：模块按钮
+	*/
 	typedef struct {
-		std::pair<const int* , const std::string*>  TYPE;
+		int32_t* TYPE;
+		std::string *strName;
 		ImageOpBase::IMG_IMG_INTERFACE mInterface;
 		BUTTON mButton;
 	}USTR;
@@ -28,9 +35,6 @@ public:
 
 	image_op_base_fi
 
-	static ImageOpBase* create(int32_t *flag_);
-
-	void set(cv::Mat *ptrIn_, cv::Mat *ptrOut);
 };
 
 #endif

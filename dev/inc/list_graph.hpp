@@ -22,7 +22,7 @@ public:
 	mLayout ：队列布局
 	vecBUTTON ：队列按钮容器
 	*/
-	QGridLayout  mLayout;
+	QHBoxLayout mLayout;
 	std::vector<BUTTON*> vecBUTTON;
 
 	/*----------------------------function-------------------------------*/

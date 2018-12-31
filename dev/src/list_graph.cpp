@@ -17,7 +17,8 @@ ListGraph::ListGraph(const std::string& name_) {
 bool ListGraph::add_button(BUTTON *button_, int seq_) {
 	if (seq_ < 0 || seq_ >= vecBUTTON.size()) {
 		vecBUTTON.push_back(button_);
-		mLayout.addWidget(button_, 0, (int)vecBUTTON.size(), 1, 1);
+		mLayout.addWidget(button_);
+		//mLayout.addWidget(button_, 0, (int)vecBUTTON.size(), 1, 1);
 		this->setLayout(&mLayout);
 		this->show();
 	}

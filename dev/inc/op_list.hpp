@@ -38,10 +38,6 @@ public:
 	Ustr mUstr;
 	
 protected:
-	/*
-	imgSrc £ºÔ­Ê¼Í¼Ïñ
-	*/
-	cv::Mat imgSrc;
 
 	/*----------------------------function-------------------------------*/
 public:

@@ -11,7 +11,7 @@ OpListManege::~OpListManege(void) {
 }
 
 /*
->>创建一个处理队列
+创建一个处理队列
 imgSrc_ : 输入原始图像，file_name_ : 原始图像名字
 */
 bool OpListManege::create_Oplist(const cv::Mat& imgSrc_, const std::string& file_name_, const std::string& list_name_) {
@@ -42,7 +42,6 @@ bool OpListManege::display_seq(const int& seq_) {
 	}
 	return true;
 }
-
 
 OpList& OpListManege::operator () (const int& seq_) {
 	if (seq_ < 0) {

@@ -1,0 +1,47 @@
+﻿
+Renamed 'set' to 'set_interface':
+---------------------------------
+D:\eboc\vs2017\VisualGraphicCode\dev\inc\gray_op.hpp(48, 7)
+D:\eboc\vs2017\VisualGraphicCode\dev\src\gray_op.cpp(37, 2)
+D:\eboc\vs2017\VisualGraphicCode\dev\src\gray_op.cpp(55, 15)
+
+Renamed 'flag_' to 'type_flag_':
+--------------------------------
+D:\eboc\vs2017\VisualGraphicCode\dev\inc\make_op.hpp(48, 53)
+
+Renamed 'ptr_img_' to 'ptr_img_left':
+-------------------------------------
+D:\eboc\vs2017\VisualGraphicCode\dev\inc\in_out_op.hpp(36, 17)
+
+Renamed 'mImg_img_layout' to 'mMat_mat_layout':
+-----------------------------------------------
+D:\eboc\vs2017\VisualGraphicCode\dev\inc\make_op.hpp(34, 16)
+D:\eboc\vs2017\VisualGraphicCode\dev\src\make_op.cpp(17, 49)
+D:\eboc\vs2017\VisualGraphicCode\dev\src\make_op.cpp(59, 12)
+D:\eboc\vs2017\VisualGraphicCode\dev\src\make_op.cpp(75, 12)
+
+Renamed 'mImg_img_button' to 'mMat_mat_button':
+-----------------------------------------------
+D:\eboc\vs2017\VisualGraphicCode\dev\inc\make_op.hpp(32, 11)
+D:\eboc\vs2017\VisualGraphicCode\dev\src\make_op.cpp(13, 20)
+D:\eboc\vs2017\VisualGraphicCode\dev\src\make_op.cpp(20, 48)
+D:\eboc\vs2017\VisualGraphicCode\dev\src\make_op.cpp(56, 12)
+
+Renamed 'mImg_img_dialog' to 'mMat_mat_dialog':
+-----------------------------------------------
+D:\eboc\vs2017\VisualGraphicCode\dev\inc\make_op.hpp(33, 12)
+D:\eboc\vs2017\VisualGraphicCode\dev\src\make_op.cpp(14, 13)
+D:\eboc\vs2017\VisualGraphicCode\dev\src\make_op.cpp(17, 12)
+D:\eboc\vs2017\VisualGraphicCode\dev\src\make_op.cpp(57, 12)
+D:\eboc\vs2017\VisualGraphicCode\dev\src\make_op.cpp(58, 12)
+
+Renamed 'MAT_NAT_TYPE' to 'MAT_ALL_TYPE':
+-----------------------------------------
+D:\eboc\vs2017\VisualGraphicCode\dev\inc\model_name.hpp(16, 9)
+D:\eboc\vs2017\VisualGraphicCode\dev\inc\model_name.hpp(31, 13)
+D:\eboc\vs2017\VisualGraphicCode\dev\src\model_name.cpp(3, 33)
+
+Renamed 'ADD_TYPE_ALL' to 'ADD_TYPE':
+-------------------------------------
+D:\eboc\vs2017\VisualGraphicCode\dev\inc\model_name.hpp(11, 9)
+D:\eboc\vs2017\VisualGraphicCode\dev\inc\model_name.hpp(16, 22)

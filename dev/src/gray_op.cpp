@@ -1,12 +1,14 @@
 #include "gray_op.hpp"
 #include "model_name.hpp"
 #include "make_op.hpp"
+#include "xxwsL_debug.hpp"
 
 Gray_op::Gray_op(void) {
-	mUstr.TYPE.first = &ModelName::iGray;
-	mUstr.TYPE.second = &ModelName::strGray;
+	mUstr.TYPE = &ModelName::i32Mat_mat;
+	mUstr.strName = &ModelName::strGray;
 	mUstr.mButton.init_set(ModelName::strGray.c_str());
-
+	mUstr.mInterface.first = nullptr;
+	mUstr.mInterface.second = nullptr;
 }
 
 Gray_op::~Gray_op(void) {
@@ -16,11 +18,16 @@ Gray_op::~Gray_op(void) {
 }
 
 bool Gray_op::op(void) {
-	cv::cvtColor(*mUstr.mInterface.first, *mUstr.mInterface.second, CV_BGR2GRAY);
-	return true;
+	if (mUstr.mInterface.first->channels() == 3) {
+		cv::cvtColor(*mUstr.mInterface.first, *mUstr.mInterface.second, CV_BGR2GRAY);
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
-void Gray_op::display(void) {
+void Gray_op::display(void) const {
 	cv::imshow("Gray_image", *mUstr.mInterface.second);
 }
 
@@ -29,35 +36,26 @@ BUTTON* Gray_op::read_button_ptr(void) {
 }
 
 void* Gray_op::read_interface_ptr(void) {
-	return &mUstr.mInterface;
+	return mUstr.mInterface.second;
 }
 
 void Gray_op::load_interface_ptr(void* interface_) {
-	mUstr.mInterface = *(ImageOpBase::IMG_IMG_INTERFACE*)interface_;
-	set(mUstr.mInterface.first, mUstr.mInterface.second);
-}
-
-ImageOpBase* Gray_op::create(int32_t *flag_) {
-	if (!flag_) {
-		if (!make_op::ptrMake_op) {
-			return new Gray_op;
-		}
-		else{
-			return make_op::ptrMake_op;
-		}
+	cv::Mat* ptrMat = (cv::Mat*)interface_;
+	if (ptrMat->empty()) {
+#ifdef XXWSL_DEBUG
+		QMessageBox msgBox;
+		msgBox.setText("Error : Gray_op->load_interface_ptr : parame interface_ is empty");
+		msgBox.exec();
+#endif
+		exit(1);
 	}
 	else {
-		*flag_ = ModelName::iGray;
-		return nullptr;
-	}
-}
-
-void Gray_op::set(cv::Mat *ptrIn_, cv::Mat *ptrOut) {
-	mUstr.mInterface.first = ptrIn_;
-	if (ptrOut) {
-		mUstr.mInterface.second = ptrOut;
-	}
-	else {
+		mUstr.mInterface.first = ptrMat;
 		mUstr.mInterface.second = new cv::Mat;
+		ptrMat->copyTo(*mUstr.mInterface.second);
 	}
+}
+
+int32_t Gray_op::read_i32_type(void) const {
+	return *mUstr.TYPE;
 }

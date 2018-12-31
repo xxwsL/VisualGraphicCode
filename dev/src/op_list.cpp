@@ -14,40 +14,51 @@ OpList::~OpList(void) {
 
 OpList::OpList(const cv::Mat& imgSrc_, const std::string& file_name_, const std::string& list_name_) {
 	if (imgSrc_.empty()) {
+#ifdef XXWSL_DEBUG
 		QMessageBox msgBox;
 		msgBox.setText(tr("Error : OpList create fail"));
 		msgBox.exec();
+#endif
 		exit(1);
 	}
-	imgSrc_.copyTo(imgSrc);
-	imgSrc_.copyTo(mUstr.imgCopy);
 	mUstr.strFile_name = file_name_;
 
 	mUstr.strListName = list_name_;
 
 	mUstr.ptrGraph = new ListGraph(list_name_);
 
-	add_model(new IO_op(&mUstr.imgCopy));
-	add_model(new AddOp(this, &ModelName::iAdd, &ModelName::strAdd, mUstr.vecTask.size(), \
-		std::make_pair(mUstr.vecTask[0]->read_interface_ptr(), nullptr)));
+	add_model(new IO_op(imgSrc_));
+	add_model(new AddOp(this, &ModelName::i32Mat_all, mUstr.vecTask.size(), mUstr.vecTask[0]->read_interface_ptr()));
 
 }
 
 
 void OpList::display_Copy(void) const {
-	cv::imshow("imgCopy", mUstr.imgCopy);
+	(*(mUstr.vecTask.end() - 2))->display();
 }
 
 
 void OpList::display_Src(void) const {
-	cv::imshow(mUstr.strFile_name, imgSrc);
+	if (mUstr.vecTask.empty()) {
+#ifdef XXWSL_DEBUG
+		QMessageBox msgBox;
+		msgBox.setText(tr("Error : OpList->display_Src; prompt : vecTask is empty"));
+		msgBox.exec();
+#endif
+		return;
+	}
+	else {
+		mUstr.vecTask[0]->display();
+	}
 }
 
 bool OpList::add_model(ImageOpBase *ptr_, const int & seq_) {
 	if (!ptr_) {
+#ifdef XXWSL_DEBUG
 		QMessageBox msgBox;
 		msgBox.setText(tr("Error : OpList->add_model parame : ImageOpBase *ptr_ is empty"));
 		msgBox.exec();
+#endif
 		exit(1);
 	}
 	if (seq_ < 0 || seq_ >= (int)mUstr.vecTask.size()) {
@@ -62,7 +73,6 @@ bool OpList::add_model(ImageOpBase *ptr_, const int & seq_) {
 }
 
 bool OpList::run(void) {
-	imgSrc.copyTo(mUstr.imgCopy);
 	for (size_t i = 0; i < mUstr.vecTask.size(); ++i) {
 		mUstr.vecTask[i]->op();
 	}

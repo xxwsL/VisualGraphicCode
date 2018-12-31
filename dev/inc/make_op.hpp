@@ -19,17 +19,36 @@ public:
 	static int32_t ptrCreate_flag;
 
 public:
-	typedef struct {
-		QGridLayout *mSelect_layout = nullptr;
 
-		BUTTON *mImg_img_button = nullptr;
-		QDialog *mImg_img_dialog = nullptr;
-		QGridLayout *mImg_img_layout = nullptr;
+	typedef struct {
+		//mat->all界面布局
+		QGridLayout *ptrMat_all_layout = nullptr;
+		//mat->all界面
+		QDialog *ptrMat_all_dialog = nullptr;
+
+		//mat->all的mat->mat按钮
+		BUTTON *ptrMat_mat_button = nullptr;
+		//mat->mat布局
+		QGridLayout *ptrMat_mat_layout_0 = nullptr;
+		//mat->all的mat->mat布局
+		QGridLayout *ptrMat_mat_layout_1 = nullptr;
+		//mat->mat的界面
+		QDialog *mMat_mat_dialog_0 = nullptr;
+		//mat->all的mat->mat的界面
+		QDialog *mMat_mat_dialog_1 = nullptr;
+		
 	}MAKE_GUI;
 
-	
+	typedef struct {
+		//mat->mat模块Gray
+		BUTTON *mGray_0 = nullptr;
+		//mat->all模块Gray
+		BUTTON *mGray_1 = nullptr;
+
+	}MODEL_BUTTON;
 
 	static MAKE_GUI mMake_GUI;
+	static MODEL_BUTTON mMake_button;
 
 	/*----------------------------function-------------------------------*/
 public:
@@ -37,11 +56,34 @@ public:
 
 	~make_op(void);
 
-	static QGridLayout* read_layout_ptr(const int32_t& flag_);
+	/*
+	关闭
+	*/
+	void close(void);
+
+	/*
+	读取布局指针
+	type_flag_ ：类型flag
+	*/
+	static QLayout* make_op::read_layout_ptr(const int32_t& flag_);
+	static QDialog* make_op::read_dialog_ptr(const int32_t& flag_);
+
+	/*
+	判断选择类型
+	i32Left ：左节点类型
+	i32Right ：有节点类型
+	*/
+	static int32_t* switch_type(const int32_t& i32Left, const int32_t& i32Right);
 
 private:
+	/*
+	初始化GUI
+	*/
 	static void init_GUI(void);
 
+	/*
+	初始化按钮
+	*/
 	static void init_button(void);
 
 };

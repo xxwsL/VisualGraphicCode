@@ -31,8 +31,9 @@ public:
 	pairInterface : 接口
 	*/
 	typedef struct {
+		int32_t* TYPE;
+		std::string *strName;
 		size_t siList_loca_seq = 0;
-		std::pair<int32_t*, std::string*>  TYPE;
 		OpList *ptrBase_list;
 		ImageOpBase::INTERFACE_TEMPLATE pairInterface;
 	}USTR;
@@ -41,35 +42,49 @@ public:
 	mLayout : 模块界面布局指针
 	mButton ：模块按钮
 	*/
-	QGridLayout *mLayout = nullptr;
+	QLayout *mLayout = nullptr;
 	BUTTON mButton;
+	QDialog *mDialog = nullptr;
 
 	USTR mUstr;
 	/*----------------------------function-------------------------------*/
 public:
 	AddOp(void);
 	~AddOp(void);
-	AddOp(OpList *ptr_base_list_, int32_t *ptr_int32_, std::string *ptr_str_, \
-		size_t seq_, ImageOpBase::INTERFACE_TEMPLATE interface_);
+	/*
+	ptr_base_list_ : 所属队列的指针
+	type_ : 模块类型
+	seq_ ：模块所属队列位置
+	interface_ ：模块中继接口
+	*/
+	AddOp(OpList *ptr_base_list_, int32_t* type_, \
+		size_t seq_, void* interface_);
 
 	image_op_base_fi
-
-	/*
-	创建一个对象
-	flag_ : 功能标志位(默认值 0 : 创建一个对象,返回对象的基类指针, int32_t* : 将int32_t赋值当前模块的类型值)
-	*/
-	static ImageOpBase* create(int32_t *flag_ = 0);
 
 private:
 	/*
 	设置参数
 	ptr_base_list_ ：处于队列对象的指针
-	ptr_int32_ ： 类型值
-	ptr_str_ ：类型字符串
+	type_ : 模块类型
 	seq_ ：处于队列的位置
+	interface_ : 接口中继口
 	*/
-	inline void set(OpList *ptr_base_list_, int32_t *ptr_int32_, std::string *ptr_str_, \
-		size_t seq_, ImageOpBase::INTERFACE_TEMPLATE interface_);
+	inline void set(OpList *ptr_base_list_, int32_t* type_, \
+		size_t seq_, void* interface_);
+
+	/*
+	更新模块类型
+	type_ ：模块类型
+	*/
+	void update_type(int32_t* type_);
+
+	/*
+	更新模块类型
+	type_left_ ：左节点模块类型
+	type_right_ ：右节点模块类型
+	*/
+	void update_type(const int32_t& type_left_, const int32_t& type_right_);
 
 private slots:
 	void QT_show(void);
