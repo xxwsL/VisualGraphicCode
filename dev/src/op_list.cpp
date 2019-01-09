@@ -80,6 +80,7 @@ bool OpList::run(void) {
 		display_Copy();
 	}
 	else {
+		cv::destroyAllWindows();
 		(*(mUstr.vecTask.end() - 2))->display();
 	}
 	return true;

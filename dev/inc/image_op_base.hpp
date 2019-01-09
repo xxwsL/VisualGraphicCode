@@ -23,17 +23,21 @@ read_intreface_ptr : 读取接口指针
 						 virtual int32_t read_i32_type(void) const;
 #endif
 
+namespace INTERFACE {
+	//mat_mat 模块接口数据结构
+	typedef std::pair<cv::Mat*, cv::Mat*> MAT_MAT;
+
+	//接口模板
+	typedef std::pair<void*, void*> TEMPLATE;
+};
+
 /*
 图像处理模块基类
 */
 class ImageOpBase {
 	/*----------------------------data-------------------------------*/
 public:
-	//img_img 模块接口数据结构
-	typedef std::pair<cv::Mat*, cv::Mat*> IMG_IMG_INTERFACE;
 
-	//接口模板
-	typedef std::pair<void*, void*> INTERFACE_TEMPLATE;
 
 	/*----------------------------function-------------------------------*/
 public:

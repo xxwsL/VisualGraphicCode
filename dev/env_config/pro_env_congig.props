@@ -3,7 +3,7 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <IncludePath>$(ProjectDir)\dev\inc;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)\dev\inc;$(ProjectDir)\dev\model\inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup />
   <ItemGroup />

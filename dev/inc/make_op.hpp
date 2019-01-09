@@ -10,6 +10,12 @@
 
 #include <vector>
 
+#ifndef MODEL_LIST_NAME
+#define MODEL_LIST_NAME
+#define MAT_ALL_STR QString("mat->all")
+#define MAT_MAT_STR QString("mat->mat")
+#endif
+
 class make_op : QObject{
 	Q_OBJECT
 
@@ -40,10 +46,13 @@ public:
 	}MAKE_GUI;
 
 	typedef struct {
-		//mat->mat模块Gray
+		//Gray模块按钮
 		BUTTON *mGray_0 = nullptr;
-		//mat->all模块Gray
 		BUTTON *mGray_1 = nullptr;
+
+		//Operator_big模块按钮
+		BUTTON *Operator_big_0 = nullptr;
+		BUTTON *Operator_big_1 = nullptr;
 
 	}MODEL_BUTTON;
 

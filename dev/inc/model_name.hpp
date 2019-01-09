@@ -43,8 +43,12 @@ public:
 	//模块输入数据类型
 	static std::string strIn;
 
-	//mat_mat模块类型数据
+	//Gray模块类型数据
 	static std::string strGray;
+
+	//operator模块类型数据
+	static std::string strOperator_big;
+	static std::string strOperator_small;
 };
 
 #endif

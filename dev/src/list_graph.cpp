@@ -20,7 +20,6 @@ bool ListGraph::add_button(BUTTON *button_, int seq_) {
 		mLayout.addWidget(button_);
 		//mLayout.addWidget(button_, 0, (int)vecBUTTON.size(), 1, 1);
 		this->setLayout(&mLayout);
-		this->show();
 	}
 	else {
 		vecBUTTON.insert(vecBUTTON.begin() + seq_, button_);
@@ -28,7 +27,7 @@ bool ListGraph::add_button(BUTTON *button_, int seq_) {
 			mLayout.addWidget(vecBUTTON[i]);
 		}
 		this->setLayout(&mLayout);
-		this->show();
 	}
+	this->show();
 	return true;
 }

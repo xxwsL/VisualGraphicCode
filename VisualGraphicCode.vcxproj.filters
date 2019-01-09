@@ -35,18 +35,21 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="model">
+      <UniqueIdentifier>{9bca0c21-e7cc-49a2-9c54-fecf808a3ea2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="model\inc">
+      <UniqueIdentifier>{627c4ffa-9814-41e0-abd8-a5aa119a3c7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="model\res">
+      <UniqueIdentifier>{f32a20bd-0673-4245-a78d-032792207e97}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dev\src\OpList_manege.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dev\src\add_op.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="dev\src\button.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="dev\src\gray_op.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="dev\src\list_graph.cpp">
@@ -67,23 +70,26 @@
     <ClCompile Include="dev\src\make_op.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dev\src\in_out_op.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="dev\model\res\add_op.cpp">
+      <Filter>model\res</Filter>
+    </ClCompile>
+    <ClCompile Include="dev\model\res\gray_op.cpp">
+      <Filter>model\res</Filter>
+    </ClCompile>
+    <ClCompile Include="dev\model\res\in_out_op.cpp">
+      <Filter>model\res</Filter>
+    </ClCompile>
+    <ClCompile Include="dev\model\res\operator_op.cpp">
+      <Filter>model\res</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dev\inc\OpList_manege.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <QtMoc Include="dev\inc\add_op.hpp">
-      <Filter>Header Files</Filter>
-    </QtMoc>
     <QtMoc Include="dev\inc\button.hpp">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <ClInclude Include="dev\inc\gray_op.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="dev\inc\image_op_base.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -114,6 +120,9 @@
     <ClInclude Include="dev\inc\all_inc.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="dev\model\inc\gray_op.hpp">
+      <Filter>model\inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
@@ -135,8 +144,14 @@
     <QtMoc Include="dev\inc\make_op.hpp">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="dev\inc\in_out_op.hpp">
-      <Filter>Header Files</Filter>
+    <QtMoc Include="dev\model\inc\add_op.hpp">
+      <Filter>model\inc</Filter>
+    </QtMoc>
+    <QtMoc Include="dev\model\inc\in_out_op.hpp">
+      <Filter>model\inc</Filter>
+    </QtMoc>
+    <QtMoc Include="dev\model\inc\operator_op.hpp">
+      <Filter>model\inc</Filter>
     </QtMoc>
   </ItemGroup>
 </Project>

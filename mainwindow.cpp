@@ -70,13 +70,14 @@ void MainWindow::on_Display_clicked(void) {
 	}
 	else {
 		mManeger.display_seq();
-	}
-	
+	}	
 }
 
 void MainWindow::on_Graph_clicked(void){
 	if (mManeger.mUstr.siLoadList_label >= 0) {
-		mManeger().mUstr.ptrGraph->show();
+		QWidget *ptrWidget = mManeger().mUstr.ptrGraph;
+		ptrWidget->setGeometry(this->x(), this->y() - ptrWidget->height(), ptrWidget->width(), ptrWidget->height());
+		ptrWidget->show();
 	}
 #ifdef XXWSL_DEBUG
 	else {

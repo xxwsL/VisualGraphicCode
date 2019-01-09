@@ -13,3 +13,8 @@ std::string ModelName::strIn = "In";
 //img_img模块类型数据
 std::string ModelName::strGray = "Gray";
 
+//operator模块类型数据
+std::string ModelName::strOperator_big = ">";
+std::string ModelName::strOperator_small = "<";
+
+

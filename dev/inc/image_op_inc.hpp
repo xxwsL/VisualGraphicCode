@@ -12,4 +12,14 @@
 #include "add_op.hpp"
 #endif
 
+#ifndef HAVE_IN_OUT_OP
+#define HAVE_IN_OUT_OP
+#include "in_out_op.hpp"
+#endif
+
+#ifndef HAVE_BINARY_OP
+#define HAVE_BINARY_OP
+#include "operator_op.hpp"
+#endif
+
 #endif
