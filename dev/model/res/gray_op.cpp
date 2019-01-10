@@ -20,7 +20,7 @@ Gray_op::~Gray_op(void) {
 bool Gray_op::op(void) {
 	switch (mUstr.mInterface.first->channels()) {
 	case 1: {
-		return false;
+		mUstr.mInterface.first->copyTo(*mUstr.mInterface.second);
 	}break;
 	case 3: {
 		cv::cvtColor(*mUstr.mInterface.first, *mUstr.mInterface.second, CV_BGR2GRAY);
@@ -49,8 +49,8 @@ void* Gray_op::read_interface_ptr(void) {
 	return mUstr.mInterface.second;
 }
 
-void Gray_op::load_interface_ptr(void* interface_) {
-	cv::Mat* ptrMat = (cv::Mat*)interface_;
+void Gray_op::load_interface_ptr(void* ptrInterface_, void* ptrList_) {
+	cv::Mat* ptrMat = (cv::Mat*)ptrInterface_;
 	if (ptrMat->empty()) {
 #ifdef XXWSL_DEBUG
 		QMessageBox msgBox;
@@ -63,6 +63,7 @@ void Gray_op::load_interface_ptr(void* interface_) {
 		mUstr.mInterface.first = ptrMat;
 		mUstr.mInterface.second = new cv::Mat;
 		ptrMat->copyTo(*mUstr.mInterface.second);
+		mUstr.ptrBase_list = (OpList*)ptrList_;
 	}
 }
 

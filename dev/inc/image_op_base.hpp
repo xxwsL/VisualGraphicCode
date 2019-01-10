@@ -2,7 +2,6 @@
 #ifndef _image_op_base_hpp_
 #define _image_op_base_hpp_
 
-#include "image_op_base.hpp"
 #include "button.hpp"
 
 #include <opencv.hpp>
@@ -19,7 +18,7 @@ read_intreface_ptr : 读取接口指针
 						 virtual void display(void) const; \
 						 virtual BUTTON* read_button_ptr(void); \
 						 virtual void* read_interface_ptr(void); \
-						 virtual void load_interface_ptr(void* ptrInterface_); \
+						 virtual void load_interface_ptr(void* ptrInterface_, void* ptrList_); \
 						 virtual int32_t read_i32_type(void) const;
 #endif
 
@@ -52,7 +51,7 @@ public:
 
 	virtual void* read_interface_ptr(void) = 0;
 
-	virtual void load_interface_ptr(void* ptrInterface_) = 0;
+	virtual void load_interface_ptr(void* ptrInterface_, void* ptrList_) = 0;
 
 	virtual int32_t read_i32_type(void) const = 0;
 

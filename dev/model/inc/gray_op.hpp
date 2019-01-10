@@ -10,6 +10,7 @@
 #include "image_op_base.hpp"
 #include "button.hpp"
 #include "model_name.hpp"
+#include "op_list.hpp"
 
 class Gray_op : public ImageOpBase
 {
@@ -17,6 +18,7 @@ class Gray_op : public ImageOpBase
 public:
 	/*
 	TYPE : 模块类型
+	strName : 模块名字
 	mInterface ：模块接口
 	mButton ：模块按钮
 	*/
@@ -25,6 +27,7 @@ public:
 		std::string *strName;
 		INTERFACE::MAT_MAT mInterface;
 		BUTTON mButton;
+		OpList *ptrBase_list;
 	}USTR;
 
 	USTR mUstr;

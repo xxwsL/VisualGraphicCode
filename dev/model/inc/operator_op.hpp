@@ -3,6 +3,8 @@
 #define _binary_op_hpp_
 
 #include "image_op_base.hpp"
+#include "op_list.hpp"
+
 
 #include <qdialog.h>
 #include <qslider.h>
@@ -19,6 +21,7 @@ public:
 		std::string *strName;
 		INTERFACE::MAT_MAT mInterface;
 		BUTTON mButton;
+		OpList *ptrBase_list;
 
 		double dValue;
 		QSlider mSlider;

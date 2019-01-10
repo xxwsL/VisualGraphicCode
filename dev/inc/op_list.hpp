@@ -3,7 +3,7 @@
 #define _op_list_hpp_
 
 #include "list_graph.hpp"
-#include "in_out_op.hpp"
+#include "image_op_base.hpp"
 
 #include <opencv.hpp>
 
@@ -66,7 +66,7 @@ public:
 	/*
 	运行处理流程
 	*/
-	bool run(void);
+	bool run(const size_t& seq_ = 0);
 
 	/*
 	显示处理流程界面

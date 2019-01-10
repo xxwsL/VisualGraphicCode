@@ -1,5 +1,6 @@
 #include "op_list.hpp"
 #include "image_op_inc.hpp"
+#include "in_out_op.hpp"
 
 //OpList::OpList(void){}
 
@@ -28,7 +29,7 @@ OpList::OpList(const cv::Mat& imgSrc_, const std::string& file_name_, const std:
 	mUstr.ptrGraph = new ListGraph(list_name_);
 
 	add_model(new IO_op(imgSrc_));
-	add_model(new AddOp(this, &ModelName::i32Mat_all, mUstr.vecTask.size(), mUstr.vecTask[0]->read_interface_ptr()));
+	add_model(new AddOp(&ModelName::i32Mat_all, mUstr.vecTask[0]->read_interface_ptr(), this, mUstr.vecTask.size()));
 
 }
 
@@ -72,15 +73,14 @@ bool OpList::add_model(ImageOpBase *ptr_, const int & seq_) {
 	return true;
 }
 
-bool OpList::run(void) {
-	for (size_t i = 0; i < mUstr.vecTask.size(); ++i) {
+bool OpList::run(const size_t& seq_) {
+	for (size_t i = seq_; i < mUstr.vecTask.size(); ++i) {
 		mUstr.vecTask[i]->op();
 	}
 	if (mUstr.vecTask.size() == 2) {
 		display_Copy();
 	}
 	else {
-		cv::destroyAllWindows();
 		(*(mUstr.vecTask.end() - 2))->display();
 	}
 	return true;

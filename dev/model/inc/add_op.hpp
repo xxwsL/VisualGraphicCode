@@ -33,7 +33,7 @@ public:
 	typedef struct {
 		int32_t* TYPE;
 		std::string *strName;
-		size_t siList_loca_seq = 0;
+		size_t siList_loca_seq;
 		OpList *ptrBase_list;
 		INTERFACE::TEMPLATE pairInterface;
 	}USTR;
@@ -52,25 +52,24 @@ public:
 	AddOp(void);
 	~AddOp(void);
 	/*
-	ptr_base_list_ : 所属队列的指针
 	type_ : 模块类型
-	seq_ ：模块所属队列位置
 	interface_ ：模块中继接口
+	ptr_base_list_ : 所属队列的指针
+	seq_ ：模块所属队列位置
 	*/
-	AddOp(OpList *ptr_base_list_, int32_t* type_, size_t seq_, void* interface_);
+	AddOp(int32_t* type_, void* interface_, OpList *ptr_base_list_, size_t seq_);
 
 	image_op_base_fi
 
 private:
 	/*
 	设置参数
-	ptr_base_list_ ：处于队列对象的指针
 	type_ : 模块类型
-	seq_ ：处于队列的位置
 	interface_ : 接口中继口
+	ptr_base_list_ : 所属队列的指针
+	seq_ ：处于队列的位置
 	*/
-	inline void set(OpList *ptr_base_list_, int32_t* type_, \
-		size_t seq_, void* interface_);
+	inline void set(int32_t* type_, void* interface_, OpList *ptr_base_list_, size_t seq_);
 
 	/*
 	更新模块类型

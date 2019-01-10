@@ -37,7 +37,7 @@ void* IO_op::read_interface_ptr(void) {
 	return mUstr.mInterface.second;
 }
 
-void IO_op::load_interface_ptr(void* interface_) {
+void IO_op::load_interface_ptr(void* interface_, void* ptrList_) {
 	mUstr.mInterface.first = (cv::Mat*)interface_;
 }
 

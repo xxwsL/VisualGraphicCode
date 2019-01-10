@@ -65,7 +65,7 @@ void* Operator_big::read_interface_ptr(void) {
 	return mUstr.mInterface.second;
 }
 
-void Operator_big::load_interface_ptr(void* ptrInterface_) {
+void Operator_big::load_interface_ptr(void* ptrInterface_, void* ptrList_) {
 	cv::Mat* ptrMat = (cv::Mat*)ptrInterface_;
 	if (ptrMat->empty()) {
 #ifdef XXWSL_DEBUG
@@ -79,6 +79,7 @@ void Operator_big::load_interface_ptr(void* ptrInterface_) {
 		mUstr.mInterface.first = ptrMat;
 		mUstr.mInterface.second = new cv::Mat;
 		ptrMat->copyTo(*mUstr.mInterface.second);
+		mUstr.ptrBase_list = (OpList*)ptrList_;
 	}
 }
 
@@ -89,10 +90,12 @@ int32_t Operator_big::read_i32_type(void) const {
 void Operator_big::set_LineEdit_Value(const int& value_) {
 	mUstr.dValue = (double)value_;
 	mUstr.mSpinBox.setValue(value_);
+	mUstr.ptrBase_list->run();
 }
 
 void Operator_big::set_slider_Value(const int& value_) {
 	mUstr.dValue = (double)value_;
 	mUstr.mSlider.setValue(value_);
+	mUstr.ptrBase_list->run();
 }
 
